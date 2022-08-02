@@ -1,0 +1,27 @@
+--Create a Nicaraguan store database
+
+CREATE TABLE nica_store (id INTEGER PRIMARY KEY, product_name TEXT, price INTEGER, cost INTEGER, popularity INTEGER);
+
+INSERT INTO nica_store VALUES (2, "Semilla de Jicaro", 3, 1, 50);
+INSERT INTO nica_store VALUES (3, "Cajeta de Leche", 2, 1, 80);
+INSERT INTO nica_store VALUES (4, "Polvoron", 3, 2, 75);
+INSERT INTO nica_store VALUES (5, "Rosquillas", 10, 6, 90);
+INSERT INTO nica_store VALUES (6, "Galleta", 2, 1, 30);
+INSERT INTO nica_store VALUES (7, "Almibar", 8, 5, 10);
+INSERT INTO nica_store VALUES (8, "Picos", 6, 4, 70);
+INSERT INTO nica_store VALUES (9, "Tortillas", 3, 1, 85);
+INSERT INTO nica_store VALUES (10, "Cafe", 2, 1, 98);
+INSERT INTO nica_store VALUES (11, "Helados", 2, 1, 40);
+INSERT INTO nica_store VALUES (12, "Leche", 9, 4, 35);
+INSERT INTO nica_store VALUES (13, "Atol", 6, 3, 20);
+INSERT INTO nica_store VALUES (14, "Tajadas", 12, 8, 100);
+INSERT INTO nica_store VALUES (15, "Enchiladas", 10, 6, 95);
+
+--display the database ordered by price. 
+SELECT * FROM nica_store ORDER BY price;
+
+--what are the most 5 popular items? 
+SELECT product_name, price, popularity FROM nica_store ORDER BY popularity DESC LIMIT 5;
+
+--what is the average price of items with a popularity greater than 80?
+SELECT AVG(price) FROM nica_store WHERE popularity > 80 
